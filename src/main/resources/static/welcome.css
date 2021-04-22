@@ -1,0 +1,31 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: azure;
+    font-family: Helvetica, serif;
+}
+
+header {
+    width: 100%;
+    padding: 10px 0.5% 0px 0.5%;
+    background: transparent;
+}
+
+#button {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+

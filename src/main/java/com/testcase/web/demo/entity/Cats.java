@@ -22,5 +22,6 @@ public class Cats {
     @Column
     private Integer votes;
 
+    @Column
     private boolean participate;
 }
