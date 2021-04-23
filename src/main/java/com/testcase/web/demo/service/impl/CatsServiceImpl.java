@@ -1,18 +1,16 @@
 package com.testcase.web.demo.service.impl;
 
 import com.testcase.web.demo.entity.Cats;
-import com.testcase.web.demo.entity.CatsConverter;
+import com.testcase.web.demo.utils.CatsConverter;
 import com.testcase.web.demo.entity.dto.CatsDto;
 import com.testcase.web.demo.repository.CatsRepository;
 import com.testcase.web.demo.service.CatsService;
+import com.testcase.web.demo.utils.CatsInQueue;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -22,6 +20,7 @@ public class CatsServiceImpl implements CatsService {
 
     private final CatsRepository catsRepository;
     private final CatsConverter catsConverter;
+    private final CatsInQueue catsInQueue;
 
     @Override
     public List<CatsDto> findAll() {
@@ -45,16 +44,21 @@ public class CatsServiceImpl implements CatsService {
 
     @Override
     public List<CatsDto> getPairCats() {
-        Iterable<Cats> allCats = catsRepository.findCatsByRand();
-        Queue<Cats> queueCats = new LinkedList<>();
-        for (Cats cat : allCats) {
-            queueCats.add(cat);
-        }
+        Queue<Cats> queueCats = catsInQueue.getQueue();
         Cats firstCat = queueCats.poll();
         Cats secondCat = queueCats.poll();
+        if (firstCat == null || secondCat == null) {
+            return Collections.emptyList();
+        }
         List<CatsDto> catsList = new ArrayList<>(2);
         catsList.add(catsConverter.fromCatsToCatsDto(firstCat));
         catsList.add(catsConverter.fromCatsToCatsDto(secondCat));
         return catsList;
+    }
+
+    @Override
+    public void saveVote(Long id) {
+        List<Cats> cat = catsRepository.findById(id).stream().collect(Collectors.toList());
+        cat.get(0).setVotes(cat.get(0).getVotes() + 1);
     }
 }

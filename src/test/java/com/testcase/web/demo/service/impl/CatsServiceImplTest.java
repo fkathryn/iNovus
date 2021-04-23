@@ -34,4 +34,11 @@ class CatsServiceImplTest {
     @Test
     void getPairCats() {
     }
+
+    @Test
+    void saveVote() {
+        long id = 3;
+        catsService.saveVote(id);
+        System.out.println(catsService.findAll());
+    }
 }

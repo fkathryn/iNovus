@@ -36,7 +36,8 @@ class CatsRepositoryTest {
 
     @Test
     void findById() {
-        Cats cat = catsRepository.findById(2).get();
+        long id = 2;
+        Cats cat = catsRepository.findById(id).get();
         System.out.println(cat);
     }
 

@@ -1,19 +1,22 @@
 package com.testcase.web.demo.controller;
 
-
+import com.testcase.web.demo.repository.CatsRepository;
 import com.testcase.web.demo.service.CatsService;
-import com.testcase.web.demo.service.impl.CatsServiceImpl;
 import lombok.AllArgsConstructor;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/vote")
 @AllArgsConstructor
 public class CatsController {
 
     private final CatsService catsService;
+    private final CatsRepository catsRepository;
 
+    @PostMapping("/vote")
+    public void vote(@RequestBody String catsId) {
+        long id = Long.parseLong(catsId);
+        if (id > 0 && id <= catsRepository.getMaxId()) {
+            catsService.saveVote(id);
+        }
+    }
 }

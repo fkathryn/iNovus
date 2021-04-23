@@ -1,5 +1,6 @@
-package com.testcase.web.demo.entity;
+package com.testcase.web.demo.utils;
 
+import com.testcase.web.demo.entity.Cats;
 import com.testcase.web.demo.entity.dto.CatsDto;
 import org.springframework.stereotype.Component;
 
