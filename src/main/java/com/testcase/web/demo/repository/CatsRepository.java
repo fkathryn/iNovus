@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface CatsRepository extends JpaRepository<Cats, Integer> {
+public interface CatsRepository extends JpaRepository<Cats, Long> {
 
     @Override
     List<Cats> findAll();
@@ -21,4 +21,7 @@ public interface CatsRepository extends JpaRepository<Cats, Integer> {
 
     @Query(value = "SELECT id FROM cats.cats_table ORDER BY votes DESC LIMIT 10", nativeQuery = true)
     Iterable<Long> findTopByCountVotes();
+
+    @Query(value = "SELECT MAX(id) FROM cats.cats_table", nativeQuery = true)
+    Long getMaxId();
 }
