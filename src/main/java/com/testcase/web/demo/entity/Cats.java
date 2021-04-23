@@ -14,13 +14,16 @@ public class Cats {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column
     private String name;
 
     @Column
     private Integer votes;
+
+    @Column
+    private String image;
 
     @Column
     private boolean participate;

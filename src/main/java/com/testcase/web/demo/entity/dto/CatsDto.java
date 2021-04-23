@@ -6,8 +6,9 @@ import lombok.Data;
 @Data
 @Builder
 public class CatsDto {
-    private Integer id;
+    private Long id;
     private String name;
     private Integer votes;
+    private String image;
     private boolean participate;
 }

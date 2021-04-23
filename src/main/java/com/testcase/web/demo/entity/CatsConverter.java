@@ -10,8 +10,9 @@ public class CatsConverter {
         Cats cats = new Cats();
         cats.setId(catsDto.getId());
         cats.setName(catsDto.getName());
-        cats.setVotes(cats.getVotes());
-        cats.setParticipate(cats.isParticipate());
+        cats.setVotes(catsDto.getVotes());
+        cats.setImage(catsDto.getImage());
+        cats.setParticipate(catsDto.isParticipate());
         return cats;
     }
 
@@ -20,6 +21,7 @@ public class CatsConverter {
                 .id(cats.getId())
                 .name(cats.getName())
                 .votes(cats.getVotes())
+                .image(cats.getImage())
                 .participate(cats.isParticipate())
                 .build();
     }
