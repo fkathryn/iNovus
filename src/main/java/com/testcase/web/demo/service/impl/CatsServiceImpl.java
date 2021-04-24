@@ -50,8 +50,6 @@ public class CatsServiceImpl implements CatsService {
         if (firstCat == null || secondCat == null) {
             return Collections.emptyList();
         }
-        firstCat.setParticipate(true);
-        secondCat.setParticipate(true);
         List<CatsDto> catsList = new ArrayList<>(2);
         catsList.add(catsConverter.fromCatsToCatsDto(firstCat));
         catsList.add(catsConverter.fromCatsToCatsDto(secondCat));
