@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>TOP</title>
+    <link type="text/css" href="/css/top.css" rel="stylesheet">
 </head>
 <body>
-
+<h1>Top of cats:</h1>
+<div class="images">
+    <th:block th:each="cat: ${topCats}">
+        <div class="image">
+            <img th:id="${cat.id}" th:src="${cat.image}" alt="">
+            <span th:id="${cat.id}" id="name"><span th:text="${cat.name}"></span></span>
+        </div>
+    </th:block>
+</div>
 </body>
 </html>

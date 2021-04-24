@@ -28,9 +28,6 @@ public class CatsController {
     @GetMapping("/templates/vote")
     public ModelAndView getCats() {
         List<CatsDto> pairCats = catsService.getPairCats();
-        for (CatsDto cat : pairCats) {
-            System.out.println(cat.getName());
-        }
         if (pairCats.isEmpty()) {
             ModelAndView modelAndView = new ModelAndView("top");
             List<CatsDto> topCats = catsService.getTopCats();

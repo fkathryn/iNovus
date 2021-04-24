@@ -59,6 +59,6 @@ public class CatsServiceImpl implements CatsService {
     @Override
     public void saveVote(Long id) {
         List<Cats> cat = catsRepository.findById(id).stream().collect(Collectors.toList());
-        cat.get(0).setVotes(cat.get(0).getVotes() + 1);
+        catsRepository.updateVote(cat.get(0).getId());
     }
 }
