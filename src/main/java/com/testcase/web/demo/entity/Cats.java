@@ -24,7 +24,4 @@ public class Cats {
 
     @Column
     private String image;
-
-    @Column
-    private boolean participate;
 }

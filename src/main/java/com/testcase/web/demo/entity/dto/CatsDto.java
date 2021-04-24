@@ -10,5 +10,4 @@ public class CatsDto {
     private String name;
     private Integer votes;
     private String image;
-    private boolean participate;
 }
