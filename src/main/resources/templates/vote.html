@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>voting</title>
+    <link type="text/css" href="/css/vote.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/js/vote.js"></script>
+</head>
+<body>
+<h1>Which cat is cuter?</h1>
+<div class="images">
+    <th:block th:each="cat: ${cats}">
+    <div class="image">
+        <img th:id="${cat.id}" onclick="vote(this.id)" th:src="${cat.image}" alt="">
+        <span onclick="vote(this.id)" id="name"><span th:text="${cat.name}"></span></span>
+    </div>
+    </th:block>
+</div>
+</body>
+</html>

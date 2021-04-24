@@ -33,6 +33,10 @@ class CatsServiceImplTest {
 
     @Test
     void getPairCats() {
+        List<CatsDto> cats = catsService.getPairCats();
+        for (CatsDto cat : cats) {
+            System.out.println(cat.getName());
+        }
     }
 
     @Test
