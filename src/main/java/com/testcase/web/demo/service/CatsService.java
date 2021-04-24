@@ -1,10 +1,7 @@
 package com.testcase.web.demo.service;
 
-import com.testcase.web.demo.entity.Cats;
 import com.testcase.web.demo.entity.dto.CatsDto;
-
 import java.util.List;
-import java.util.Queue;
 
 public interface CatsService {
     List<CatsDto> findAll();

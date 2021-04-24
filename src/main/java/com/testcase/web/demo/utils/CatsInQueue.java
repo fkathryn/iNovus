@@ -2,7 +2,6 @@ package com.testcase.web.demo.utils;
 
 import com.testcase.web.demo.entity.Cats;
 import com.testcase.web.demo.repository.CatsRepository;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
