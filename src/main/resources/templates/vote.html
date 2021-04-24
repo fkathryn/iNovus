@@ -13,7 +13,7 @@
     <th:block th:each="cat: ${cats}">
     <div class="image">
         <img th:id="${cat.id}" onclick="vote(this.id)" th:src="${cat.image}" alt="">
-        <span onclick="vote(this.id)" id="name"><span th:text="${cat.name}"></span></span>
+        <span th:id="${cat.id}" onclick="vote(this.id)" id="name"><span th:text="${cat.name}"></span></span>
     </div>
     </th:block>
 </div>
