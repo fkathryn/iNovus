@@ -20,9 +20,9 @@ public class CatsInQueue {
     public CatsInQueue(CatsRepository catsRepository) {
         this.catsRepository = catsRepository;
         this.queue = new LinkedList<>();
+        catsInQueue();
     }
 
-    @PostConstruct
     private void catsInQueue() {
         Iterable<Cats> allCats = catsRepository.findCatsByRand();
         queue = new LinkedList<>();

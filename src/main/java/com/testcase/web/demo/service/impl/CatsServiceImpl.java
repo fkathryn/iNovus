@@ -20,7 +20,7 @@ public class CatsServiceImpl implements CatsService {
 
     private final CatsRepository catsRepository;
     private final CatsConverter catsConverter;
-    private final CatsInQueue catsInQueue;
+    private CatsInQueue catsInQueue;
 
     @Override
     public List<CatsDto> findAll() {
@@ -48,6 +48,7 @@ public class CatsServiceImpl implements CatsService {
         Cats firstCat = queueCats.poll();
         Cats secondCat = queueCats.poll();
         if (firstCat == null || secondCat == null) {
+            catsInQueue = new CatsInQueue(catsRepository);
             return Collections.emptyList();
         }
         List<CatsDto> catsList = new ArrayList<>(2);
