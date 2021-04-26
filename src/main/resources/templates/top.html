@@ -10,10 +10,12 @@
 <div class="images">
     <th:block th:each="cat: ${topCats}">
         <div class="image">
+            <li class="image__place"></li>
             <img th:id="${cat.id}" th:src="${cat.image}" alt="">
             <span th:id="${cat.id}" id="name"><span th:text="${cat.name}"></span></span>
         </div>
     </th:block>
 </div>
-</body>
+<script src="/js/top.js"></script>
+</body> 
 </html>
