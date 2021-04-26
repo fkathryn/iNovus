@@ -1,13 +1,17 @@
 package com.testcase.web.demo.controller;
 
+import com.testcase.web.demo.entity.Cats;
 import com.testcase.web.demo.entity.dto.CatsDto;
 import com.testcase.web.demo.repository.CatsRepository;
 import com.testcase.web.demo.service.CatsService;
 import lombok.AllArgsConstructor;
+import org.dom4j.rule.Mode;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -17,6 +21,11 @@ public class CatsController {
     private final CatsService catsService;
     private final CatsRepository catsRepository;
 
+    @GetMapping("/")
+    public String startPage(Model model) {
+        return "start";
+    }
+
     @PostMapping("/vote")
     public void vote(@RequestBody String catsId) {
         long id = Long.parseLong(catsId);
@@ -25,7 +34,7 @@ public class CatsController {
         }
     }
 
-    @GetMapping("/templates/vote")
+    @GetMapping("/vote")
     public ModelAndView getCats() {
         List<CatsDto> pairCats = catsService.getPairCats();
         if (pairCats.isEmpty()) {
@@ -36,5 +45,19 @@ public class CatsController {
         ModelAndView modelAndView = new ModelAndView("vote");
         modelAndView.addObject("cats", pairCats);
         return modelAndView;
+    }
+
+    @GetMapping("/add_cats")
+    public String catsAdd(Model model) {
+        return "add_cats";
+    }
+
+    @PostMapping("/add")
+    public String catsPostAdd(@RequestParam String name,@RequestParam String image, Model model) {
+        if (name == null || image == null)
+            return "redirect:/";
+        Cats cats = new Cats(0L, image, name, 0);
+        catsRepository.save(cats);
+        return "redirect:/";
     }
 }
