@@ -62,4 +62,8 @@ public class CatsServiceImpl implements CatsService {
         List<Cats> cat = catsRepository.findById(id).stream().collect(Collectors.toList());
         catsRepository.updateVote(cat.get(0).getId());
     }
+
+    public void addCat(Cats cat) {
+        catsRepository.insertCat(cat.getId(), cat.getImage(), cat.getName(), 0);
+    }
 }

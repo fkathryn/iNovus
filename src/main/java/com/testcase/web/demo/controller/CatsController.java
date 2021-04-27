@@ -5,13 +5,10 @@ import com.testcase.web.demo.entity.dto.CatsDto;
 import com.testcase.web.demo.repository.CatsRepository;
 import com.testcase.web.demo.service.CatsService;
 import lombok.AllArgsConstructor;
-import org.dom4j.rule.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -54,10 +51,10 @@ public class CatsController {
 
     @PostMapping("/add")
     public String catsPostAdd(@RequestParam String name,@RequestParam String image, Model model) {
-        if (name == null || image == null)
-            return "redirect:/";
-        Cats cats = new Cats(0L, image, name, 0);
-        catsRepository.save(cats);
+        if (!name.isEmpty() && !image.isEmpty()) {
+            Cats cat = new Cats(catsRepository.getMaxId() + 1, image, name, 0);
+            catsService.addCat(cat);
+        }
         return "redirect:/";
     }
 }

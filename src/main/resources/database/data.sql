@@ -1,9 +1,15 @@
 INSERT INTO cats.cats_table VALUES (
-                                        1,
+                                        0,
                                         'https://avatars.mds.yandex.net/get-zen_doc/1595469/pub_5e11b76906cc4600afee38ad_5e1df66ce3062c00b03cbc35/scale_1200',
                                         'Fleur',
                                         0
                                     );
+INSERT INTO cats.cats_table VALUES (
+                                       1,
+                                       'https://i.pinimg.com/originals/87/69/21/876921e25c71862aeb24395e8abea19c.jpg',
+                                       'Smuzzi',
+                                       0
+                                   );
 INSERT INTO cats.cats_table VALUES (
                                         2,
                                         'https://i.pinimg.com/564x/19/6c/9b/196c9bd3035a328c4b9245380b632118.jpg'
@@ -12,13 +18,13 @@ INSERT INTO cats.cats_table VALUES (
                                     );
 INSERT INTO cats.cats_table VALUES (
                                         3,
-                                        'https://i.pinimg.com/564x/9e/0b/3c/9e0b3c0a64e062b9cb081c80a4d63f96.jpg'
+                                        'https://static.boredpanda.com/blog/wp-content/uploads/2016/08/bengal-cat-spots-fur-thor-18.jpg'
 ,                                        'Nacho',
                                         0
                                     );
 INSERT INTO cats.cats_table VALUES (
                                         4,
-                                        'https://i.pinimg.com/564x/1b/47/a4/1b47a40a95f424bf2787f68ba6742857.jpg'
+                                        'https://pbs.twimg.com/media/ER-6n8MX0AIBn2s.jpg'
 ,                                        'Sleepy',
                                         0
                                     );
@@ -110,5 +116,11 @@ INSERT INTO cats.cats_table VALUES (
                                        19,
                                        'https://img11.postila.ru/data/eb/72/35/a9/eb7235a926fca2e3f2cbd68baed2dbf75af3abbdb0c96f350b8615661de03ba5.jpg',
                                        'Dolan',
+                                       0
+                                   );
+INSERT INTO cats.cats_table VALUES (
+                                       20,
+                                       'https://i.pinimg.com/originals/41/c7/5f/41c75ff33aec967c061f61dd8c5794b7.jpg',
+                                       'Mickael',
                                        0
                                    );

@@ -4,6 +4,7 @@ import com.testcase.web.demo.entity.Cats;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,4 +32,9 @@ public interface CatsRepository extends JpaRepository<Cats, Long> {
     @Transactional
     @Query(value = "UPDATE cats.cats_table SET votes = votes + 1 WHERE id = ?1", nativeQuery = true)
     void updateVote(Long id);
+
+    @Modifying
+    @Transactional
+    @Query(value = "INSERT INTO cats.cats_table VALUES (:id, :image, :name, :vote)", nativeQuery = true)
+    void insertCat(@Param("id") Long id, @Param("image") String image, @Param("name") String name, @Param("vote") Integer vote);
 }
