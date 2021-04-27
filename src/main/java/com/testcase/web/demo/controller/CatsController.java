@@ -52,7 +52,12 @@ public class CatsController {
     @PostMapping("/add")
     public String catsPostAdd(@RequestParam String name,@RequestParam String image, Model model) {
         if (!name.isEmpty() && !image.isEmpty()) {
-            Cats cat = new Cats(catsRepository.getMaxId() + 1, image, name, 0);
+            Cats cat;
+            if (catsRepository.getMaxId() == null) {
+                cat = new Cats(0L, image, name, 0);
+            } else {
+                cat = new Cats(catsRepository.getMaxId() + 1, image, name, 0);
+            }
             catsService.addCat(cat);
         }
         return "redirect:/";

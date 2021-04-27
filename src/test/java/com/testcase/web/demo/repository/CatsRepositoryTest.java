@@ -22,20 +22,7 @@ class CatsRepositoryTest {
 
 
     @Test
-    Cats findByName(String name) {
-        Cats cats = findByName(name);
-        Assertions.assertEquals(cats.getName(), "Rick");
-        Assertions.assertEquals(cats.getId(), 1);
-        System.out.println(cats.getName());
-
-        return cats;
-    }
-
-    @Test
     void findById() {
-        long id = 2;
-        Cats cat = catsRepository.findById(id).get();
-        System.out.println(cat);
     }
 
     @Test

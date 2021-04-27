@@ -28,7 +28,7 @@ class CatsServiceImplTest {
     @Test
     void getTopCats() {
         List<CatsDto> catsList = catsService.getTopCats();
-        assertEquals(catsList.size(), 4);
+        assertEquals(catsList.size(), 10);
     }
 
     @Test
