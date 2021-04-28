@@ -29,7 +29,7 @@ public class CatsInQueue {
         for (Cats cat : allCats) {
             queue.add(cat);
         }
-        if (queue.size() % 2 != 0) {
+        if (queue.size() % 2 != 1) {
             queue.poll();
         }
     }

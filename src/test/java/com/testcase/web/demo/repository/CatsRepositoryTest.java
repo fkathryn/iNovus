@@ -23,14 +23,22 @@ class CatsRepositoryTest {
 
     @Test
     void findById() {
+        catsRepository.findById(0L);
+        catsRepository.findById(24L);
     }
 
     @Test
     void findCatsByRand() {
-    }
-
-    @Test
-    void findTopById() {
+        Iterable<Cats> cats1 = catsRepository.findCatsByRand();
+        Iterable<Cats> cats2 = catsRepository.findCatsByRand();
+        System.out.println("*** first cats by rand ***");
+        for (Cats cat : cats1) {
+            System.out.println(cat.getName());
+        }
+        System.out.println("*** second cats by rand ***");
+        for (Cats cat : cats2) {
+            System.out.println(cat.getName());
+        }
     }
 
     @Test

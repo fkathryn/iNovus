@@ -18,8 +18,8 @@ INSERT INTO cats.cats_table VALUES (
                                     );
 INSERT INTO cats.cats_table VALUES (
                                         3,
-                                        'https://static.boredpanda.com/blog/wp-content/uploads/2016/08/bengal-cat-spots-fur-thor-18.jpg'
-,                                        'Nacho',
+                                        'https://i.pinimg.com/564x/30/28/9b/30289be60f94edfc6801b21f5d05c5f7.jpg'
+,                                        'Nani',
                                         0
                                     );
 INSERT INTO cats.cats_table VALUES (
@@ -31,7 +31,7 @@ INSERT INTO cats.cats_table VALUES (
 INSERT INTO cats.cats_table VALUES (
                                         5,
                                         'https://i.pinimg.com/564x/d3/f6/7c/d3f67c267a202f25b11381224aac5117.jpg'
-,                                        'Pikachy',
+,                                        'Pikachu',
                                         0
                                     );
 INSERT INTO cats.cats_table VALUES (
@@ -42,8 +42,8 @@ INSERT INTO cats.cats_table VALUES (
                                     );
 INSERT INTO cats.cats_table VALUES (
                                         7,
-                                        'https://i.pinimg.com/564x/a4/65/60/a465602f9c559fe493abd6c2c20f15ee.jpg'
-,                                        'Shark',
+                                        'https://i.pinimg.com/564x/e8/17/e0/e817e045d7a4cf0fa73f5a7bbb413149.jpg'
+,                                        'Bella',
                                         0
                                     );
 INSERT INTO cats.cats_table VALUES (
@@ -90,7 +90,7 @@ INSERT INTO cats.cats_table VALUES (
                                     );
 INSERT INTO cats.cats_table VALUES (
                                         15,
-                                        'https://ae01.alicdn.com/kf/H8b1f138d1ed74b0eb1fcd3d7c4555c2bl.jpg'
+                                        'https://i.pinimg.com/564x/05/5e/00/055e0022e0dd20e54f0d28cfc10e055a.jpg'
 ,                                        'Richard',
                                         0
                                     );
@@ -122,5 +122,23 @@ INSERT INTO cats.cats_table VALUES (
                                        20,
                                        'https://i.pinimg.com/originals/41/c7/5f/41c75ff33aec967c061f61dd8c5794b7.jpg',
                                        'Mickael',
+                                       0
+                                   );
+INSERT INTO cats.cats_table VALUES (
+                                       21,
+                                       'https://i.pinimg.com/736x/90/f3/70/90f3702f99559cf7e8736bd434d2f1da.jpg',
+                                       'Kolen',
+                                       0
+                                   );
+INSERT INTO cats.cats_table VALUES (
+                                       22,
+                                       'https://data.whicdn.com/images/332078984/original.jpg',
+                                       'Sarah',
+                                       0
+                                   );
+INSERT INTO cats.cats_table VALUES (
+                                       23,
+                                       'https://i.pinimg.com/736x/87/3d/64/873d64a780ee2f3b953eda461b0cc194.jpg',
+                                       'Lollipop',
                                        0
                                    );
