@@ -19,7 +19,6 @@ public class CatsInQueue {
     @Autowired
     public CatsInQueue(CatsRepository catsRepository) {
         this.catsRepository = catsRepository;
-        this.queue = new LinkedList<>();
         catsInQueue();
     }
 
@@ -29,7 +28,7 @@ public class CatsInQueue {
         for (Cats cat : allCats) {
             queue.add(cat);
         }
-        if (queue.size() % 2 != 1) {
+        if (queue.size() % 2 != 0) {
             queue.poll();
         }
     }
